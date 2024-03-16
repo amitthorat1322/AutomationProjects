@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.AssertJUnit;
 import org.apache.log4j.PropertyConfigurator;
+import org.apache.poi.util.SystemOutLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -143,23 +144,26 @@ public class LoginPageTest extends TBase{
 			}
 	}
 	
-	@Test(enabled = false)
+	@Test(enabled=false)
 	public void amazonDropdown()
 	{
 		driver.get("https://www.amazon.in/?&tag=googhydrabk1-21&ref=pd_sl_7hz2t19t5c_e&adgrpid=155259815513&hvpone=&hvptwo=&hvadid=676742245123&hvpos=&hvnetw=g&hvrand=12706191631117004662&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9062116&hvtargid=kwd-10573980&hydadcr=14453_2367553");
+
+		driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
 		WebElement dropd = driver.findElement(By.xpath("//select[@id='searchDropdownBox']"));
 		Select sd = new Select(dropd);
 		
-		List<WebElement> dpd = sd.getOptions();
-		for(WebElement dropds : dpd)
-		{
-			String sg = dropds.getText();
-			System.out.println("Sg:-"+sg);
-			if(dropds.getText().contains("Baby"))
-			{
-				dropds.click();
-			}
-		}
+		
+		
+		  List<WebElement> dpd = sd.getOptions();
+		  for(WebElement dropds : dpd)
+		  { 
+			  String   sg = dropds.getText(); 
+			  System.out.println("Sg:-"+sg);
+			  
+			  
+		  if(dropds.getText().contains("Baby")) { dropds.click(); } }
+		 
 	}
 	@Test(enabled = false)
 	public void wiki()
@@ -180,7 +184,7 @@ public class LoginPageTest extends TBase{
 			}
 		}
 	}
-	@Test(enabled = false)
+	@Test(enabled=false)
 	public void s() {
 		driver.get("https://www.amazon.com/");
 		driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
@@ -225,7 +229,7 @@ public class LoginPageTest extends TBase{
 	       
 	}
 	
-	@Test
+	@Test @Ignore
 	public void checkTable() throws IOException
 	{
 		driver.get("https://demo.guru99.com/test/web-table-element.php");
@@ -253,15 +257,37 @@ public class LoginPageTest extends TBase{
 				}	
 				 
 			}
-			TakesScreenshot ts = (TakesScreenshot)driver;
-			File c = ts.getScreenshotAs(OutputType.FILE);
-			File d = new File(" ");
-			FileUtils.copyFile(c, d);
-			
-			driver.get("https://maharerait.mahaonline.gov.in/PrintPreview/PrintPreview?q=9K1ErN3XXkStL6MeweQ6XFLvt8uCfwKPw1KXsRiVSE1TeKVSEVZJMdLYk8chnSJbUICp4C50w8QDAttSHw0AB742ZaJoHi%2fTo3FhdgwBkR2XxtQ7rnbtX0BRRsEg2pQR5wR%2fYDBglAeQNVXbj8mxh6jC2vvQMKJLQpS%2foPP6eaHsXiY7C23%2b4Q%3d%3d");
-			
+		
 			
 		}
+	}
+	
+	@Test
+	public void oranage() throws InterruptedException
+	{
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys("Admin");
+		driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("admin123");
+		driver.findElement(By.xpath("//button[@type='submit']")).submit();
+		
+		driver.findElement(By.xpath("//ul[@class='oxd-main-menu']/descendant::span[normalize-space()='Admin']")).click();
+		
+		
+		driver.findElement(By.xpath("//input[@class='oxd-input oxd-input--focus']")).sendKeys("Amit");
+		
+		WebElement s = driver.findElement(By.xpath("//div[@class='oxd-select-text oxd-select-text--focus']"));
+		
+		Select ss = new Select(s);
+		
+		List<WebElement> sss = ss.getOptions();
+		for(WebElement s2 : sss)
+		{
+			System.out.println("Selected is:"+s2.getText());
+		}
+		
+		Thread.sleep(30000);
+		
 	}
 }
 

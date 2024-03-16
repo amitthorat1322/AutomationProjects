@@ -7,7 +7,7 @@
         <methods>
           <include name="teardown"/>
           <include name="initalization"/>
-          <include name="checkTable"/>
+          <include name="oranage"/>
         </methods>
       </class> <!-- TestResult.LoginPageTest -->
     </classes>
