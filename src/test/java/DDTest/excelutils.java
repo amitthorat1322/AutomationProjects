@@ -10,6 +10,8 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 public class excelutils {
 
@@ -21,35 +23,33 @@ public class excelutils {
 
 	private static XSSFRow Row;
 	
-	public static void main(String args[])
-	{
-		 FileInputStream ExcelFile;
-		try {
-			ExcelFile = new FileInputStream("E:\\c.xlsx");
-		
-			ExcelWBook = new XSSFWorkbook(ExcelFile);
-			
-			ExcelWSheet = ExcelWBook.getSheet("Amit");
-			
-			int rc = ExcelWSheet.getLastRowNum()+1;
-			int cc = 2;
-			for(int i=0;i<rc;i++)
-			{
-				for(int j=0;j<cc;j++)
-				{
-					Cell = ExcelWSheet.getRow(i).getCell(j);
-					String S = Cell.getStringCellValue();
-					System.out.println("C:-"+S);
-				}
-			}
-			
-			
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
 
-	
+	@DataProvider(name="am")
+    public Object[][] readValueFromExcel() throws IOException
+    {
+        FileInputStream fis = new FileInputStream("E:\\c.xlsx");
+        ExcelWBook = new XSSFWorkbook(fis);
+        ExcelWSheet = ExcelWBook.getSheet("Amit");
+        int rowCount = ExcelWSheet.getLastRowNum()+1;
+        int colCount = ExcelWSheet.getRow(0).getLastCellNum();
+        Object[][] data = new Object[rowCount][colCount];
+        for(int i=0;i<rowCount;i++)
+        {
+        	//Row = ExcelWSheet.getRow(i);
+            for(int j=0;j<colCount;j++)
+            {
+               // Cell = ExcelWSheet.getRow(i).getCell(j);
+                data[i][j] = ExcelWSheet.getRow(i).getCell(j).getStringCellValue();
+            }
+        }
+        return data;
+    }
+    
+    
+    @Test(dataProvider="am")
+    public void d(String data1,String data2,String data3)
+    {
+         System.out.println("Data from Excel: " + data1 + ", " + data2+ ", "+data3);
+    }
 }
-	}
 

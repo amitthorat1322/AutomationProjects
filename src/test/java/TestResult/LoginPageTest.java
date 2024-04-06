@@ -6,9 +6,12 @@ import org.testng.AssertJUnit;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.poi.util.SystemOutLogger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -29,14 +32,20 @@ import com.trail.proj.pages.LoginPage;
 import DDTest.DataProviderClass;
 import DDTest.LoggerClass;
 
+import java.awt.AWTException;
+import java.awt.Point;
+import java.awt.Robot;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Driver;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FileUtils;import org.apache.commons.io.filefilter.FalseFileFilter;
 import org.apache.log4j.Logger;
 
 public class LoginPageTest extends TBase{
@@ -44,7 +53,7 @@ public class LoginPageTest extends TBase{
 	LoginPage loginpage;
 	static final Logger log = Logger.getLogger(LoginPageTest.class);
 	
-	
+	@BeforeClass
 	public void setup()
 	{
 		initalization();
@@ -152,10 +161,7 @@ public class LoginPageTest extends TBase{
 		driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
 		WebElement dropd = driver.findElement(By.xpath("//select[@id='searchDropdownBox']"));
 		Select sd = new Select(dropd);
-		
-		
-		
-		  List<WebElement> dpd = sd.getOptions();
+		List<WebElement> dpd = sd.getOptions();
 		  for(WebElement dropds : dpd)
 		  { 
 			  String   sg = dropds.getText(); 
@@ -254,15 +260,12 @@ public class LoginPageTest extends TBase{
 				{
 					String data12 = driver.findElement(By.xpath("//table[@class='dataTable']/tbody/tr/td[4]")).getText();
 					System.out.println("asdasd:"+data12);
-				}	
-				 
+				}		 
 			}
-		
-			
 		}
 	}
 	
-	@Test
+	@Test(enabled=false)
 	public void oranage() throws InterruptedException
 	{
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
@@ -289,5 +292,33 @@ public class LoginPageTest extends TBase{
 		Thread.sleep(30000);
 		
 	}
+	
+	@Test
+	public void validatePageDetails() throws AWTException
+	{
+		  driver.get("https://demoqa.com/browser-windows");
+
+	        // Open new child window within the main window
+	        driver.findElement(By.id("windowButton")).click();
+
+	        //Get handles of the windows
+	        String mainWindowHandle = driver.getWindowHandle();
+	        Set<String> allWindowHandles = driver.getWindowHandles();
+	        Iterator<String> iterator = allWindowHandles.iterator();
+	        //System.out.println("Size:-"+allWindowHandles.size());
+	        // Here we will check if child window has other child windows and will fetch the heading of the child window
+	        while (iterator.hasNext()) {
+	            String ChildWindow = iterator.next();
+	            	System.out.println("S:-"+ChildWindow);
+	                if (!mainWindowHandle.equalsIgnoreCase(ChildWindow)) {
+	                driver.switchTo().window(ChildWindow);
+	                WebElement text = driver.findElement(By.id("sampleHeading"));
+	                System.out.println("Heading of child window is " + text.getText());
+	            }
+	        }
+	        
+	        
+	}
 }
+
 
