@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 welcome here f1a
+=======
+welcome here rohit
+>>>>>>> amitfeature2
