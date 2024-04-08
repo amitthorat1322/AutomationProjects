@@ -3,11 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestResult.TrailCode">
+      <class name="TestResult.PracticePageTest">
         <methods>
-          <include name="start"/>
+          <include name="teardown"/>
+          <include name="tear"/>
+          <include name="initalization"/>
+          <include name="uisngDataProvider" invocation-numbers="4"/>
+          <include name="Setup"/>
         </methods>
-      </class> <!-- TestResult.TrailCode -->
+      </class> <!-- TestResult.PracticePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

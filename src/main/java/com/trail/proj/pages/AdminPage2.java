@@ -10,15 +10,15 @@ import org.testng.annotations.BeforeClass;
 
 import com.trail.proj.Base.TBase;
 
-public class AdminPage extends TBase {
+public class AdminPage2 extends TBase {
 
 	
-	AdminPage adminpage;
+	AdminPage2 adminpage;
 	@BeforeClass
 	public void setup()
 	{
 		initalization();
-		adminpage = new AdminPage();
+		adminpage = new AdminPage2();
 		driver.get("https://parabank.parasoft.com/parabank/index.htm");
 	}
 	

@@ -9,65 +9,19 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">6,056</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">44,021</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">TestResult.TrailCode</td><td><a href="#m0">start</a></td><td rowspan="1">1712309686638</td><td rowspan="1">5951</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">TestResult.PracticePageTest</td><td><a href="#m0">uisngDataProvider</a></td><td rowspan="1">1712566830965</td><td rowspan="1">995</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">TestResult.PracticePageTest</td><td><a href="#m1">uisngDataProvider</a></td><td rowspan="4">1712566825501</td><td rowspan="4">2994</td></tr><tr class="passedeven"><td><a href="#m2">uisngDataProvider</a></td></tr><tr class="passedeven"><td><a href="#m3">uisngDataProvider</a></td></tr><tr class="passedeven"><td><a href="#m4">uisngDataProvider</a></td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">TestResult.TrailCode#start</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 121
-Current browser version is 123.0.6312.105 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-QS1767H&apos;, ip: &apos;192.168.1.10&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
-Driver info: driver.version: ChromeDriver
-remote stacktrace: 	GetHandleVerifier [0x00007FF6580A5E42+3538674]
-	(No symbol) [0x00007FF657CC4C02]
-	(No symbol) [0x00007FF657B75AEB]
-	(No symbol) [0x00007FF657BAC512]
-	(No symbol) [0x00007FF657BAB872]
-	(No symbol) [0x00007FF657BA5106]
-	(No symbol) [0x00007FF657BA21C8]
-	(No symbol) [0x00007FF657BE94B9]
-	(No symbol) [0x00007FF657BDEE53]
-	(No symbol) [0x00007FF657BAF514]
-	(No symbol) [0x00007FF657BB0631]
-	GetHandleVerifier [0x00007FF6580D6CAD+3738973]
-	GetHandleVerifier [0x00007FF65812C506+4089270]
-	GetHandleVerifier [0x00007FF658124823+4057299]
-	GetHandleVerifier [0x00007FF657DF5C49+720121]
-	(No symbol) [0x00007FF657CD126F]
-	(No symbol) [0x00007FF657CCC304]
-	(No symbol) [0x00007FF657CCC432]
-	(No symbol) [0x00007FF657CBBD04]
-	BaseThreadInitThunk [0x00007FF83F57257D+29]
-	RtlUserThreadStart [0x00007FF84050AA58+40]
-
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
-	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
-	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
-	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
-	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:123)
-	at TestResult.TrailCode.start(TrailCode.java:34)
+<h2>Default test</h2><h3 id="m0">TestResult.PracticePageTest#uisngDataProvider</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr><tr class="param stripe"><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><th colspan="4">Exception</th></tr><tr><td colspan="4"><div class="stacktrace">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy14.sendKeys(Unknown Source)
+	at com.trail.proj.pages.PracticePage.byDataProvider(PracticePage.java:75)
+	at TestResult.PracticePageTest.uisngDataProvider(PracticePageTest.java:111)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -97,5 +51,9 @@ remote stacktrace: 	GetHandleVerifier [0x00007FF6580A5E42+3538674]
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">TestResult.PracticePageTest#uisngDataProvider</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr><tr class="param stripe"><td>rohit</td><td>rohit@gmail.com</td><td>pune</td><td>pune</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">TestResult.PracticePageTest#uisngDataProvider</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr><tr class="param stripe"><td>amit</td><td>amit@gmail.com</td><td>pune</td><td>pune</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">TestResult.PracticePageTest#uisngDataProvider</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr><tr class="param stripe"><td>akbar</td><td>akbar@gmail.com</td><td>pune</td><td>pune</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">TestResult.PracticePageTest#uisngDataProvider</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr><tr class="param stripe"><td>jay</td><td>jay@gmail.com</td><td>pune</td><td>pune</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

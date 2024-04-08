@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Banking Project" thread-count="1" >
-<listeners>
-        <listener class-name="TestResult.CustomTestListener" />
-</listeners>
-	<parameter name="Username" value="jyoti"/>
-	<parameter name="Password" value="jyoti@123"/>	
-  <!-- 	<test name="Registration Test" >
-  	 <classes>
-  	 		 <class name="TestResult.RegisterPageTest"/>
-  	 		  <class name="TestResult.LoginPageTest"/>
+<suite name="Project" thread-count="1" >
+    <test name="Practice Test">
+	    <parameter name="name" value="jyoti"/>
+		<parameter name="email" value="jyoti@123"/>	
+		<parameter name="caddress" value="pune"/>	
+		<parameter name="paddress" value="pune"/>	
+  	 	<classes>
+             <class name="TestResult.PracticePageTest"/>
         </classes>
-  </test>  --><!-- Test -->
-  <test name="Login Test" verbose="1" parallel="methods">
-  	 <classes>
-  	 	
-             <class name="TestResult.LoginPageTest"/>
-        </classes>
-  </test> <!-- Test -->
+  </test> 
 </suite> <!-- Suite -->
